@@ -75,7 +75,8 @@ export default function QuestionnairePage() {
         answers: answers
       };
 
-      const res = await fetch('http://localhost:5000/api/users', {
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://wingmann-matching-platform.onrender.com";
+      const res = await fetch(`${API_URL}/api/users`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)

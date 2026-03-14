@@ -21,7 +21,8 @@ function ResultsContent() {
 
     const fetchMatches = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/compatibility/${userId}`);
+        const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://wingmann-matching-platform.onrender.com";
+        const res = await fetch(`${API_URL}/api/compatibility/${userId}`);
         const data = await res.json();
         if (res.ok) {
           setMatches(data);
