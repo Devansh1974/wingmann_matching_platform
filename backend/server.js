@@ -16,11 +16,17 @@ app.use(express.json());
 app.use('/api/users', userRoutes);
 app.use('/api/compatibility', compatibilityRoutes);
 
+const { loadCategoryEmbeddings } = require('./utils/embeddingClassifier');
+
 // Database connection
 const mongoUri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/wingmann';
 mongoose.connect(mongoUri)
-  .then(() => {
+  .then(async () => {
     console.log('Connected to MongoDB');
+    
+    // Warm up the OpenAI NLP cache
+    await loadCategoryEmbeddings();
+
     app.listen(port, () => {
       console.log(`Server running on port ${port}`);
     });

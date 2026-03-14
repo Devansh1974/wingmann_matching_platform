@@ -21,14 +21,16 @@ router.get('/:userId', async (req, res) => {
     });
 
     // 3. Run compatibility algorithm for all
-    const matches = potentialMatches.map(otherUser => {
-      const percentage = calculateCompatibility(currentUser, otherUser);
+    const matchPromises = potentialMatches.map(async (otherUser) => {
+      const percentage = await calculateCompatibility(currentUser, otherUser);
       return {
         _id: otherUser._id,
         name: otherUser.name,
         compatibility: percentage
       };
     });
+
+    const matches = await Promise.all(matchPromises);
 
     // 4. Return sorted results (highest first)
     matches.sort((a, b) => b.compatibility - a.compatibility);

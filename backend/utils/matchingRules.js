@@ -7,13 +7,13 @@ const QUESTION_WEIGHTS = {
 };
 
 const NLP_CATEGORIES = {
-  emotional: ['love', 'care', 'affection', 'warmth', 'emotional support', 'kindness', 'compassion', 'maturity'],
-  trust: ['honesty', 'loyalty', 'transparency', 'dependability', 'faithfulness', 'reliability'],
-  communication: ['openness', 'communication', 'listening', 'understanding', 'expressing emotions', 'patience'],
-  respect: ['support', 'respect', 'equality', 'appreciation', 'independence', 'space', 'boundaries'],
-  growth: ['growth', 'teamwork', 'understanding', 'adaptive', 'flexible', 'supporting goals', 'solving'],
-  fun: ['sex', 'sharing experiences', 'adventure', 'chemistry', 'humour', 'emotional connection'],
-  stability: ['commitment', 'safety', 'consistency', 'partnership', 'togetherness']
+  emotional: ["love", "care", "affection", "warmth", "compassion", "kindness"],
+  trust: ["honesty", "trust", "loyalty", "faithfulness", "reliability", "dependable"],
+  communication: ["communication", "openness", "listening", "understanding", "expressing"],
+  respect: ["respect", "equality", "boundaries", "independence"],
+  growth: ["growth", "teamwork", "learning", "adaptability"],
+  fun: ["chemistry", "humour", "fun", "adventure", "connection"],
+  stability: ["commitment", "safety", "consistency", "partnership"]
 };
 
 const MATCHING_RULES = {
