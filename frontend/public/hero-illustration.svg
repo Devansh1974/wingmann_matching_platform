@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none">
+  <!-- Glowing background blobs -->
+  <circle cx="250" cy="250" r="180" fill="url(#gradientMain)" opacity="0.15" />
+  <circle cx="350" cy="150" r="100" fill="url(#gradientAccent)" opacity="0.2" />
+  <circle cx="150" cy="350" r="120" fill="url(#gradientLight)" opacity="0.2" />
+
+  <!-- Connecting Node 1 -->
+  <g transform="translate(180, 200)">
+    <circle cx="0" cy="0" r="45" fill="white" filter="url(#drop-shadow)" />
+    <circle cx="0" cy="0" r="30" fill="url(#gradientMain)" />
+  </g>
+
+  <!-- Connecting Node 2 -->
+  <g transform="translate(320, 300)">
+    <circle cx="0" cy="0" r="55" fill="white" filter="url(#drop-shadow)" />
+    <circle cx="0" cy="0" r="40" fill="url(#gradientAccent)" />
+  </g>
+
+  <!-- The Connection Line -->
+  <path d="M 200 220 Q 250 250 290 270" stroke="url(#gradientMain)" stroke-width="8" stroke-linecap="round" stroke-dasharray="10 15" />
+
+  <!-- Small floating UI elements -->
+  <rect x="250" y="100" width="80" height="30" rx="15" fill="white" filter="url(#drop-shadow)" />
+  <rect x="265" y="112" width="50" height="6" rx="3" fill="#E2D8F0" />
+  
+  <rect x="120" y="280" width="60" height="60" rx="16" fill="white" filter="url(#drop-shadow)" />
+  <path d="M 140 310 L 145 315 L 160 300" stroke="#6A4C93" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+
+  <defs>
+    <linearGradient id="gradientMain" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6A4C93" />
+      <stop offset="100%" stop-color="#8A63C8" />
+    </linearGradient>
+    <linearGradient id="gradientAccent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8A63C8" />
+      <stop offset="100%" stop-color="#B89CE0" />
+    </linearGradient>
+    <linearGradient id="gradientLight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F6F4F8" />
+      <stop offset="100%" stop-color="#E2D8F0" />
+    </linearGradient>
+    <filter id="drop-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#6A4C93" flood-opacity="0.15" />
+    </filter>
+  </defs>
+</svg>
